@@ -7,7 +7,8 @@
 
 
 def crear_saludo(nombre: str) -> str:
-    return "hola, soy" + nombre;
+    frase = "Hola, " + nombre+"!"
+    return frase;
 
 
 def suma_enteros(a: int, b: int) -> int:
@@ -16,15 +17,15 @@ def suma_enteros(a: int, b: int) -> int:
 
 
 def es_mayor_de_edad(edad: int) -> bool:
-   if (edad>=18):
-       return True;
-   return False;
+    if(edad>=18):
+        return True;
+    return False;
 
 
 def tipo_de_dato(valor) -> str:
-  
+
     return type(valor).__name__
 
 
 def convertir_a_float(valor: str) -> float:
-   return valor;
+    return float(valor);

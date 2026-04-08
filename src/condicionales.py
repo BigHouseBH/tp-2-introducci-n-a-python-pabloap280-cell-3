@@ -22,14 +22,14 @@ def mayor_de_tres(a: int, b: int, c: int) -> int:
 def clasificar_nota(nota: float) -> str:
     if (nota<0 or nota>10):
         return "Nota inválida";
-      elif (nota<9):
-            return "Notable";
-    elif (nota<5):
-        return "Suspenso";
-    elif (nota<7):
+    elif (nota>=9):
+        return "Sobresaliente";
+    elif (nota>=7):
+            return "Bueno";
+    elif (nota>=6):
         return "Aprobado";
-  
-    return "Sobresaliente"; 
+    else:
+        return "Desaprobado";
 
 
 def es_bisiesto(anio: int) -> bool:

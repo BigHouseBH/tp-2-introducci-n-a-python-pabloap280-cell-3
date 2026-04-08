@@ -14,7 +14,6 @@ def contar_palabras(texto: str) -> dict:
     
     return contador
 
-***A partir de aqui emplea de manera mas agresiva la ia a escases de tiempo suficiente, aunque sostube el entidimeiento de las lineas***
 
 def invertir_diccionario(d: dict) -> dict:
     invertido = {}
