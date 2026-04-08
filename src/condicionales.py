@@ -4,11 +4,11 @@
 
 
 def clasificar_numero(n: int) -> str:
-    """
-    Retorna "positivo", "negativo" o "cero" según corresponda.
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+    if (n==0):
+        return "cero";
+    elif (n<0):
+        return "negativo";
+    return "positivo"
 
 
 def mayor_de_tres(a: int, b: int, c: int) -> int:
