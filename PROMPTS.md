@@ -669,6 +669,153 @@ no aplica, solo pedi un diagnositoco del area cognitiva del algoritmo.Aun asi de
 for X in Y:
 si Y es objeto lista=> for pide un iterador al(un indice) y recorre segun el iterador, si le doy el iterador directamente=> for directamente lo recorre segun el iterador, el REVERSED ES UN METODO QUE RETORNA UN ITERADOR CON LOGICA INVERSA A LA LISTA QUE TIENE DE PARAMETRO.Cambio mi vision de los for en pyton y ahora los pienso como un operador que hace multiples invocaciones segun una especie de indice determinada Iterador,
 
+
+Funcion: eliminar_duplicados
+
+
+**Prompt usado**:
+def eliminar_duplicados(lista: list) -> list:
+    sinDuplicados=list(lista);
+    for elemento in sinDuplicados:
+       copy=sinDuplicados.count(elemento);
+       while(not copy==0):
+        for buscado in reversed(sinDuplicados):
+            if(buscado==elemento):
+                sinDuplicados.remove(elemento);
+                copy=sinDuplicados.count(elemento);
+                break;
+
+             quiero que corrigas mi idea para que en ves de usar el reversed acceda al mismo indice del iterador y busque hacia adelante, porque aunque mi logica que comparar con los elmentos atras del elemento es en bano ya que ya se comparo, es corresta, sinembargo en caso de recivir comoparametro una lista ordenada perderia la oprtunidad de hacerlo mas efciciente al ser los elementos estan ubicados como vecinos, pero no alteres la logica prinsipal del algoritmo que te envio dado que la idea es que fucniones si no esta ordenado, y que funcione aun mejor si esta ordenado, es decir no compara sol con su vecino sino con todos los de adelante, pero se replante con el metodo count si sigue aviendo para asi tener chance de ahorrarse una busqueda lineal inecesaria, es decir siempre cada que elimina un elmento , decrece el contador pero busca asia adelante del indice del elemetno NUNCA ASUME QUE EL SIGUIENTE ES IGUAL O QUE ESTA ORDENADA
+> 
+
+**Resultado obtenido**:
+¡Excelente! Entiendo perfectamente tu idea. Querés **mantener tu lógica original** pero optimizarla para que:
+
+1. ✅ Funcione siempre (lista ordenada o no)
+2. ✅ Sea más eficiente cuando está ordenada
+3. ✅ Busque **hacia adelante** desde el elemento actual (no use `reversed`)
+4. ✅ Use `count()` para saber si aún quedan duplicados
+
+---
+
+## Tu idea corregida y optimizada:
+
+```python
+def eliminar_duplicados(lista: list) -> list:
+    sinDuplicados = list(lista)
+    i = 0  # Índice manual en lugar de for elemento
+    
+    while i < len(sinDuplicados):
+        elemento = sinDuplicados[i]
+        cantidad = sinDuplicados.count(elemento)
+        
+        if cantidad > 1:
+            # Buscar hacia ADELANTE (desde i+1 hasta el final)
+            for j in range(i + 1, len(sinDuplicados)):
+                if sinDuplicados[j] == elemento:
+                    sinDuplicados.pop(j)  # Eliminar por índice
+                    cantidad -= 1
+                    break  # Salgo del for, vuelvo al while
+        else:
+            i += 1  # Solo avanzo si no eliminé nada
+    
+    return sinDuplicados
+```
+
+---
+
+## ¿Qué cambié?
+
+| Tu versión | Mi corrección |
+|------------|---------------|
+| `for elemento in sinDuplicados` | `while i < len()` (control manual) |
+| `reversed(sinDuplicados)` | `for j in range(i+1, len())` (hacia adelante) |
+| `remove(elemento)` | `pop(j)` (eliminar por índice exacto) |
+| `break` dentro del `for` | `break` + `cantidad -= 1` |
+
+---
+
+## ¿Por qué funciona mejor?
+
+### Ejemplo con lista ordenada `[1, 1, 1, 2]`:
+
+```python
+i=0, elemento=1, cantidad=3 (>1)
+  Busca desde i+1 (posición 1): encuentra 1 en j=1
+  Elimina posición 1 → lista = [1, 1, 2]
+  cantidad=2, break, vuelve al while (i sigue siendo 0)
+
+i=0, elemento=1, cantidad=2 (>1)
+  Busca desde i+1 (posición 1): encuentra 1 en j=1
+  Elimina posición 1 → lista = [1, 2]
+  cantidad=1, break
+
+i=0, elemento=1, cantidad=1 (no >1)
+  i++ → i=1
+
+i=1, elemento=2, cantidad=1 (no >1)
+  i++ → i=2 (termina)
+
+Resultado: [1, 2] ✅
+```
+
+### Ejemplo con lista desordenada `[2, 1, 2, 1]`:
+
+```python
+i=0, elemento=2, cantidad=2
+  Busca desde i+1: j=2 (posición 2 hay un 2)
+  Elimina j=2 → lista = [2, 1, 1]
+  cantidad=1
+
+i=0, elemento=2, cantidad=1 → i=1
+
+i=1, elemento=1, cantidad=2
+  Busca desde i+1: j=2 (posición 2 hay un 1)
+  Elimina j=2 → lista = [2, 1]
+
+Resultado: [2, 1] ✅ (preserva orden de primera aparición)
+```
+
+---
+
+## Complejidad algorítmica:
+
+| Situación | Tu idea original | Esta versión |
+|-----------|------------------|--------------|
+| Peor caso (desordenado) | O(n²) | O(n²) |
+| Mejor caso (ordenado) | O(n²) | **O(n)** ✅ |
+
+---
+
+## Versión aún más eficiente (si permitís cambiar la lógica):
+
+```python
+def eliminar_duplicados(lista: list) -> list:
+    visto = set()
+    resultado = []
+    for elemento in lista:
+        if elemento not in visto:
+            visto.add(elemento)
+            resultado.append(elemento)
+    return resultado
+```
+Esto es **O(n)** siempre, pero no usa tu lógica original.
+
+---
+
+## Conclusión:
+
+Tu idea de **buscar hacia adelante en lugar de usar `reversed`** es **correcta y más eficiente** cuando la lista está ordenada.
+
+La versión que te propongo **respeta tu lógica original** pero corrige:
+- El problema de modificar la lista mientras se recorre
+- La búsqueda ineficiente hacia atrás
+- El uso de `remove()` por `pop(j)`
+
+**¿Te gusta esta corrección o querés que ajuste algo más?** 😊
+**¿Lo usaste tal cual o lo modificaste?**
+
+
 ---
 
 ### 4 - diccionarios.py

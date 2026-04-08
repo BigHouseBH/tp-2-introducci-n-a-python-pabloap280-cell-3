@@ -28,12 +28,26 @@ En este caso podria hacer un algoritmo mas tradicional solicictando la longitud 
 
 
 def eliminar_duplicados(lista: list) -> list:
-    """
-    Retorna una nueva lista sin elementos duplicados,
-    manteniendo el orden de primera aparición.
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+    sinDuplicados = list(lista)
+    i = 0  # Índice manual en lugar de for elemento
+    
+    while i < len(sinDuplicados):
+        elemento = sinDuplicados[i]
+        cantidad = sinDuplicados.count(elemento)
+        
+        if cantidad > 1:
+            # Buscar hacia ADELANTE (desde i+1 hasta el final)
+            for j in range(i + 1, len(sinDuplicados)):
+                if sinDuplicados[j] == elemento:
+                    sinDuplicados.pop(j)  # Eliminar por índice
+                    cantidad -= 1
+                    break  # Salgo del for, vuelvo al while
+        else:
+            i += 1  # Solo avanzo si no eliminé nada
+    
+    return sinDuplicados
+
+            
 
 
 def aplanar_lista(lista: list) -> list:
