@@ -35,7 +35,7 @@ def eliminar_duplicados(lista: list) -> list:
         elemento = sinDuplicados[i]
         cantidad = sinDuplicados.count(elemento)
         
-        if cantidad > 1:
+        while cantidad > 1:
             # Buscar hacia ADELANTE (desde i+1 hasta el final)
             for j in range(i + 1, len(sinDuplicados)):
                 if sinDuplicados[j] == elemento:
@@ -51,9 +51,7 @@ def eliminar_duplicados(lista: list) -> list:
 
 
 def aplanar_lista(lista: list) -> list:
-    """
-    Dada una lista de listas, retorna todos los elementos en una sola lista.
-    Ejemplo: aplanar_lista([[1,2],[3,4]]) -> [1, 2, 3, 4]
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+    resultado = []
+    for sublista in lista:
+        resultado.extend(sublista)
+    return resultado

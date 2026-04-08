@@ -814,13 +814,30 @@ La versión que te propongo **respeta tu lógica original** pero corrige:
 
 **¿Te gusta esta corrección o querés que ajuste algo más?** 😊
 **¿Lo usaste tal cual o lo modificaste?**
-
+Lo modifique tenia algunas fallas como que asumia que solo existe una copia debido al operador if cantidad > 1:
+ en lugar de un while
 
 ---
 
 ### 4 - diccionarios.py
 
-**Herramienta**: 
+**Herramienta**: DeepSeek
+
+**Prompt usado**:
+def contar_palabras(texto: str) -> dict:
+    """
+    Retorna un diccionario con la frecuencia de cada palabra.
+    Ejemplo: contar_palabras("hola mundo hola") -> {"hola": 2, "mundo": 1}
+    Las palabras deben ser comparadas en minúsculas.
+    """
+    # TU CÓDIGO AQUÍ
+    pass   reseta: 1)lee cadapalabra y comparala con todas las que siguen,2)Al aver contado anotala de la manera corresta en la lista cuentaPalabras, y enlista la palabra repetida en una lista palabras repertidas para y avansar indice y repetir si solo si la palabra no esta en la lista de palabras repetidas
+
+**Resultado obtenido**:
+La ia me explico me dio un  codigo funcional y me enseño que no hacia flata llevar un registro de que palabras ya se consideraron para que no ocurran casos de repeticion(siguiendo el ejemplo del comentario Ej:Hola:2, Hola:2), ya que pyton tiene una dato llamado diccionario en en palabras simples relaciona un valor a una clave, por tanto al haver una clave hola todas sus repeticiones e almacenarar en la misma ""casilla""
+
+**¿Lo usaste tal cual o lo modificaste?**
+Luego de entender el funcionamiento de los diccionarios lo deje tal cual ya que era funcional
 
 **Prompt usado**:
 > 
@@ -879,9 +896,10 @@ La versión que te propongo **respeta tu lógica original** pero corrige:
 ---
 
 ## Reflexión final
+## Reflexión final
 
-Respondé brevemente (3-5 oraciones):
+- Aprendí que para formular buenos prompts hay que ser **claro y específico**. No basta con decir "resolvé esto", sino que hay que explicar el contexto, qué parte no se entiende y qué tipo de respuesta se espera. También aprendí que hacer preguntas concretas sobre sintaxis o conceptos específicos da mejores resultados que pedir soluciones completas.
 
-- ¿Qué aprendiste sobre cómo formular buenos prompts?
-- ¿En qué casos la IA fue útil y en cuáles no?
-- ¿Qué harías diferente la próxima vez?
+- La IA fue muy útil para explicar conceptos como type hints, la diferencia entre listas y diccionarios, o cómo funciona el operador `and`. También me ayudó a entender errores de lógica. En cambio, no fue tan útil cuando intenté resolver ejercicios más complejos con mi propia lógica (como eliminar duplicados), porque la IA a veces proponía soluciones muy alejadas de mi razonamiento o que no terminaban de funcionar como esperaba.
+
+- La próxima vez consideraria mas algunos patrones que s eme hisieron comodos como el analisis cognitivo ya que me da un buen diagnostico, y resetea ya que es como escrivir mi algoritmo de forma mas abstarcta pero que sostiene la idea de que razar y no que la ia lo haga.Ademas usaria mas la Ia con un enfoque de acelerar ya que al inicio me centre en entender muy bien pyton y su sintaxis y no llegaba con el timepo de entrega lo que me orillo a usar la ia para resolver y a aprtir de ahi preguntar en lugar de hacerlo yo mismo y hacer diagnosticos y consultas despues

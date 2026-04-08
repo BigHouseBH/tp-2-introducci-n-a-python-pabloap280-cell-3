@@ -4,36 +4,39 @@
 
 
 def contar_palabras(texto: str) -> dict:
-    """
-    Retorna un diccionario con la frecuencia de cada palabra.
-    Ejemplo: contar_palabras("hola mundo hola") -> {"hola": 2, "mundo": 1}
-    Las palabras deben ser comparadas en minúsculas.
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+    palabras = texto.lower().split()
+    contador = {}  
+    for palabra in palabras:
+        if palabra in contador:     # ¿Ya existe?
+            contador[palabra] += 1  # Sí → sumo 1
+        else:
+            contador[palabra] = 1   # No → la creo con valor 1
+    
+    return contador
 
+***A partir de aqui emplea de manera mas agresiva la ia a escases de tiempo suficiente, aunque sostube el entidimeiento de las lineas***
 
 def invertir_diccionario(d: dict) -> dict:
-    """
-    Retorna un nuevo diccionario con claves y valores intercambiados.
-    Ejemplo: invertir_diccionario({"a": 1}) -> {1: "a"}
-    """
-    # TU CÓDIGO AQUÍ
-    pass
-
+    invertido = {}
+    for clave, valor in d.items():
+        invertido[valor] = clave
+    return invertido
 
 def merge_diccionarios(d1: dict, d2: dict) -> dict:
     """
     Combina dos diccionarios. Si hay claves repetidas, prevalece d2.
     """
-    # TU CÓDIGO AQUÍ
-    pass
-
+    resultado = d1.copy()  # Copia d1
+    resultado.update(d2)   # Agrega d2 (sobreescribe claves repetidas)
+    return resultado
 
 def filtrar_por_valor(d: dict, minimo: int) -> dict:
     """
     Retorna un nuevo diccionario con solo los pares
     cuyo valor sea >= minimo.
     """
-    # TU CÓDIGO AQUÍ
-    pass
+    resultado = {}
+    for clave, valor in d.items():
+        if valor >= minimo:
+            resultado[clave] = valor
+    return resultado
