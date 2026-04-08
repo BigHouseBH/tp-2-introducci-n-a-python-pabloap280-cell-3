@@ -4,27 +4,27 @@
 
 
 def suma_lista(numeros: list) -> int | float:
-    """
-    Retorna la suma de todos los elementos de la lista.
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+    sumatoria = 0;
+    """el for de pyton se piensa semejante a un for each de java, Ej: por cada elemento X de la coleccion Lista: ejecuta lo siguiente..."""
+    for num in numeros:
+        sumatoria+=num;
+    return sumatoria;
 
 
 def filtrar_pares(numeros: list) -> list:
-    """
-    Retorna una nueva lista con solo los números pares.
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+   pares=list();   """en pyton solo existe las listas, pero se puede declarar semejante a un arreglo Ej: x=[] o bien x=list() """
+   for num in numeros:
+    if num%2==0:
+        pares.append(num);
+            
+   return pares;
 
 
 def invertir_lista(lista: list) -> list:
     """
-    Retorna la lista invertida SIN modificar la original.
-    """
-    # TU CÓDIGO AQUÍ
-    pass
+En este caso podria hacer un algoritmo mas tradicional solicictando la longitud de la lista y a aprtir de ahi recorrerla de forma opuesta pero pyton posee una funcion elegante que voy a emplear:    """
+    reverseList=list(reversed(lista));
+    return reverseList;
 
 
 def eliminar_duplicados(lista: list) -> list:

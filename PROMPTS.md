@@ -279,19 +279,395 @@ No, solamente lo utilize para aprender la sintaxis, es algoritmo empleado es el 
 
 ### 3 - listas.py
 
-**Herramienta**:
+**Herramienta**:Deepseek
+
+Funcion: suma_lista
+
+
 
 **Prompt usado**:
+def suma_lista(numeros: list) -> int | float:
+    """
+    Retorna la suma de todos los elementos de la lista.
+    """
+    # TU CÓDIGO AQUÍ
+    def suma_lista(numeros: list) -> int | float:
+    float sumatoria = 0;
+    for(num : numeros):
+        sumatoria+=num;
+    return sumatoria;
+asi se usan los for en pyton no?
+
+**Resultado obtenido**:
+¡Casi! Pero hay varios errores de sintaxis. Te explico:
+
+## Lo que escribiste (con errores):
+```python
+def suma_lista(numeros: list) -> int | float:
+    float sumatoria = 0;      # ❌ Error: Python no declara tipos así
+    for(num : numeros):       # ❌ Error: no se usa ":" dentro del for
+        sumatoria+=num;       # ✅ Esto está bien (aunque el ; sobra)
+    return sumatoria;
+```
+
+## Versión correcta en Python:
+```python
+def suma_lista(numeros: list) -> int | float:
+    sumatoria = 0              # ✅ Sin "float", sin ";"
+    for num in numeros:        # ✅ "for variable in lista"
+        sumatoria += num       # ✅ Sin ";" (opcional pero no se usa)
+    return sumatoria           # ✅ Sin ";"
+```
+
+---
+
+## Diferencias clave con otros lenguajes:
+
+| Lo que pensaste (Java/C#) | Python correcto |
+|---------------------------|-----------------|
+| `float sumatoria = 0;` | `sumatoria = 0` |
+| `for(num : numeros)` | `for num in numeros` |
+| `punto y coma ;` | No se usa (opcional pero mal visto) |
+
+---
+
+## Versión aún más corta (usando `sum()`):
+```python
+def suma_lista(numeros: list) -> int | float:
+    return sum(numeros)
+```
+
+Pero si el ejercicio pide que implementes el loop vos mismo, usá la primera versión.
+
+---
+
+## Resumen del for en Python:
+
+```python
+# ✅ Así se escribe:
+for elemento in lista:
+    # hacé algo
+
+# ❌ Así NO:
+for(elemento : lista)   # Eso es Java/C#
+```
+
+
 
 **¿Lo usaste tal cual o lo modificaste?**
 
-> 
+Normalmente empleo la ia como buscador inteligente, me gusta pensar el algoritmo, en este caso tambien lo realize yo, solo emplee la ia para identificar sintaxis caracteristica de pyton
+
+
+
+Funcion: filtrar_pares
+
+
+
+**Prompt usado**:
+hasme un analisis cognitivo del ejersicio def filtrar_pares(numeros: list) -> list:
+   pares=list();   """en pyton solo existe las listas, pero se puede declarar semejante a un arreglo Ej: x=[] o bien x=list() """
+   for num in numeros:
+    if num%2==0:
+        pares.append(num);
+            
+   return pares;
+
+**Resultado obtenido**:
+## Análisis cognitivo completo de `filtrar_pares` 🧠
+
+---
+
+### 📊 Evaluación general: **APROBADO** ✅
+
+| Criterio | Estado | Puntaje |
+|----------|--------|---------|
+| Corrección lógica | ✅ Perfecto | 10/10 |
+| Sintaxis Python | ✅ Correcta | 9/10 |
+| Casos borde | ✅ Bien manejados | 10/10 |
+| Estilo/Pythonic | ⚠️ Mejorable | 7/10 |
+| Documentación | ✅ Aceptable | 8/10 |
+
+---
+
+### ✅ Lo que está EXCELENTE:
+
+1. **Lógica correcta**: `num % 2 == 0` captura TODOS los pares (incluyendo 0, negativos)
+2. **Caso borde del 0**: ✅ BIEN (ahora sí lo incluís)
+3. **Lista vacía**: `[]` → retorna `[]` ✅
+4. **Estructura clara**: loop → condición → append → return
+
+---
+
+### ⚠️ Lo que es MEJORABLE (pero NO incorrecto):
+
+| Problema | Tu código | Mejor versión |
+|----------|-----------|---------------|
+| Punto y coma | `pares = list();` | `pares = []` |
+| Posición del docstring | Dentro de la función | Encima (justo abajo del `def`) |
+| Comentario largo | Dentro del código | Mejor en el docstring |
+
+---
+
+### 🔍 Análisis línea por línea:
+
+```python
+def filtrar_pares(numeros: list) -> list:
+```
+✅ Tipo de parámetro y retorno bien especificados
+
+```python
+    pares = list();
+```
+✅ Crea lista vacía correctamente  
+⚠️ El `;` sobra (pero no rompe nada)
+
+```python
+    """en pyton solo existe las listas..."""
+```
+⚠️ El docstring debería describir QUÉ hace la función, no dar lecciones de Python
+
+```python
+    for num in numeros:
+```
+✅ Iteración correcta
+
+```python
+        if num % 2 == 0:
+```
+✅ Condición perfecta (0, negativos, positivos)
+
+```python
+            pares.append(num);
+```
+✅ Agrega elemento correctamente  
+⚠️ `;` sobra
+
+```python
+    return pares;
+```
+✅ Retorna la lista correcta  
+⚠️ `;` sobra
+
+---
+
+### 🧪 Casos borde probados:
+
+| Entrada | Salida | ¿Correcto? |
+|---------|--------|------------|
+| `[0, 1, 2, 3, 4]` | `[0, 2, 4]` | ✅ |
+| `[]` | `[]` | ✅ |
+| `[-4, -3, -2, -1]` | `[-4, -2]` | ✅ |
+| `[1, 3, 5]` | `[]` | ✅ |
+| `[0, 0, 0]` | `[0, 0, 0]` | ✅ |
+
+---
+
+### 🚀 Versión mejorada (más "Pythonica"):
+
+```python
+def filtrar_pares(numeros: list) -> list:
+    """
+    Filtra y retorna solo los números pares de la lista recibida.
+    Incluye el 0 y números negativos pares.
+    """
+    return [num for num in numeros if num % 2 == 0]
+```
+
+---
+
+### 📈 Resumen cognitivo:
+
+| Aspecto | Evaluación |
+|---------|------------|
+| **Comprensión del problema** | ✅ Completa |
+| **Manejo de casos borde** | ✅ Excelente (0 incluido) |
+| **Sintaxis básica** | ✅ Correcta |
+| **Estilo Python** | ⚠️ Aceptable (mejorable) |
+| **Legibilidad** | ✅ Buena |
+
+---
+
+### 🎯 Nota final: **8.5/10**
+
+**Puntos a mejorar para llegar a 10:**
+1. Sacar los `;` (son de Java/C, no de Python)
+2. Mover el comentario a docstring
+3. Usar `[]` en lugar de `list()` (más rápido y legible)
+
+---
+
+**¿Querés que te ayude a refactorizarlo a la versión "Python puro" o así lo dejamos?** 😊
+
+**¿Lo usaste tal cual o lo modificaste?**
+
+No aplica, solo pedi un diagnostico cognitivo del algoritmo
+
+
+Funcion:invertir_lista
+
+
+**Prompt usado**:
+def invertir_lista(lista: list) -> list:
+    """
+    Retorna la lista invertida SIN modificar la original.
+    """
+    # TU CÓDIGO AQUÍ
+    pass no quiero que me lo resuelvas solo quiero saber si las listas tienen un getSize() u los for alguna manera de hacer un recorido lineal inverso
+
 
 **Resultado obtenido**:
 
+¡Excelente pregunta! Te explico sin resolverlo:
+
+## En Python NO existe `getSize()` → se usa `len(lista)`
+
+| Java / C# | Python |
+|-----------|--------|
+| `lista.size()` | `len(lista)` |
+| `lista.length` | `len(lista)` |
+
+---
+
+## Para recorrer una lista de forma inversa (3 formas):
+
+### 1. **Usando `reversed()`** (la más común)
+```python
+for elemento in reversed(lista):
+    # recorre desde el último hasta el primero
+```
+
+### 2. **Usando índice negativo**
+```python
+for i in range(len(lista) - 1, -1, -1):
+    elemento = lista[i]
+    # i empieza en el último índice, baja hasta 0
+```
+
+### 3. **Usando slicing invertido**
+```python
+for elemento in lista[::-1]:
+    # recorre la lista invertida
+```
+
+---
+
+## Índices negativos en Python (importante):
+
+| Lista | `[10, 20, 30, 40]` |
+|-------|---------------------|
+| Índice positivo | 0→10, 1→20, 2→30, 3→40 |
+| Índice negativo | -4→10, -3→20, -2→30, -1→40 |
+
+```python
+mi_lista = [10, 20, 30, 40]
+print(mi_lista[-1])  # 40 (último)
+print(mi_lista[-2])  # 30
+```
+
+---
+
+## Para tu ejercicio `invertir_lista`:
+
+Necesitás **crear una NUEVA lista** (sin modificar la original). Algunas ideas:
+- Recorrer la original desde el final hasta el principio e ir agregando
+- Usar slicing: `lista[::-1]` crea una copia invertida
+
+---
+
+## Resumen:
+
+| Necesitas | En Python |
+|-----------|-----------|
+| Tamaño de lista | `len(lista)` |
+| Recorrer inverso | `reversed(lista)` |
+| Último elemento | `lista[-1]` |
+| Crear copia invertida | `lista[::-1]` |
+
+¿Con estas herramientas podés resolverlo o necesitás alguna aclaración más?** 😊
 
 **¿Lo usaste tal cual o lo modificaste?**
 
+Use lo que me enseño, el algoritmo prefiero procesarlo yo mismo para conetar mas con pyton
+
+
+funcion: invertir_lista
+
+**Prompt usado**:
+> def invertir_lista(lista: list) -> list:
+    """
+En este caso podria hacer un algoritmo mas tradicional solicictando la longitud de la lista y a aprtir de ahi recorrerla de forma opuesta pero pyton posee una funcion elegante que voy a emplear:    """
+    return list(reversed(lista));
+
+ diagnostico
+
+**Resultado obtenido**:
+## ¡Me encanta! ❤️
+
+Es **excelente** tu enfoque por dos razones:
+
+---
+
+### 1. ✅ **Reconocés la herramienta adecuada**
+No forzás un algoritmo "tradicional" (con índices y `len()`) cuando Python ya tiene algo más elegante.
+
+### 2. ✅ **Documentás tu decisión**
+Explicás POR QUÉ elegiste esa forma. Eso es valioso.
+
+---
+
+## Puntaje imaginario:
+
+| Aspecto | Puntaje |
+|---------|---------|
+| Corrección | 10/10 |
+| Elegancia | 10/10 |
+| Documentación | 10/10 |
+| Estilo Python | 9/10 (solo por el `;`) |
+
+---
+
+## Mini mejora (sacá el `;`):
+
+```python
+def invertir_lista(lista: list) -> list:
+    """
+    En este caso podría hacer un algoritmo más tradicional solicitando la 
+    longitud de la lista y a partir de ahí recorrerla de forma opuesta, 
+    pero Python posee una función elegante que voy a emplear.
+    """
+    return list(reversed(lista))
+```
+
+---
+
+## Lo que VALORO de tu código:
+
+> *"No todo lo que se puede hacer con un loop tradicional debe hacerse con un loop tradicional. Python te da herramientas de alto nivel para pensar más claro."*
+
+---
+
+## ¿Se puede aún más elegante?
+
+```python
+def invertir_lista(lista: list) -> list:
+    """Retorna la lista invertida usando slicing."""
+    return lista[::-1]
+```
+
+Pero **ambas son perfectamente válidas**. La tuya es más explícita (muestra la intención de "reversar" claramente).
+
+---
+
+¿Dejamos esa versión o querés probar la de slicing?** Cualquiera de las dos está perfecta. 😊👍
+
+**¿Lo usaste tal cual o lo modificaste?**
+
+no aplica, solo pedi un diagnositoco del area cognitiva del algoritmo.Aun asi descubri que puedo crear una lista directamente usando el iterador que retorna reversed(), sin el uso explicitp de un for
+
+**Nota**:Tuve una larga discusion sobre el funcionamiento del for en pyton ya que entendia que recorria de forma directa cada elemento a la derecha del In, pero la Ia me enseño que el operador for de pyton funciona de forma diferente, abstrayendo procesos al usuario, basicamente :
+for X in Y:
+si Y es objeto lista=> for pide un iterador al(un indice) y recorre segun el iterador, si le doy el iterador directamente=> for directamente lo recorre segun el iterador, el REVERSED ES UN METODO QUE RETORNA UN ITERADOR CON LOGICA INVERSA A LA LISTA QUE TIENE DE PARAMETRO.Cambio mi vision de los for en pyton y ahora los pienso como un operador que hace multiples invocaciones segun una especie de indice determinada Iterador,
 
 ---
 

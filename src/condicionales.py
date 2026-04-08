@@ -8,7 +8,7 @@ def clasificar_numero(n: int) -> str:
         return "cero";
     elif (n<0):
         return "negativo";
-    return "positivo"
+    return "positivo";
 
 
 def mayor_de_tres(a: int, b: int, c: int) -> int:
