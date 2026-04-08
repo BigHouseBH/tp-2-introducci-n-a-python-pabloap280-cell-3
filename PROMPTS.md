@@ -242,15 +242,49 @@ pass es una instrucción vacía que no hace nada (no es un return null).
 Lo escribí yo mismo después de entender la lógica.
 
 
+Funcion: mayor_de_tres
+**Prompt usado**:
+Tengo que hcer esto, es facil pero como es la sintaxis en pyton para un operador "y"?
+**Resultado obtenido**:
+¡Perfecto! Directo al grano:
+
+## Operador "Y" en Python:
+
+```python
+and
+```
+
+## Ejemplo:
+
+```python
+if condicion1 and condicion2:
+    # se ejecuta si ambas son True
+```
+
+¿Necesitás algún ejemplo más específico o con eso andamos? 🚀
+
+## Resumen rápido:
+
+- `and` = ambas condiciones deben ser verdaderas
+- `or` = al menos una condición debe ser verdadera
+- `not` = invierte el valor (True → False, False → True)
+
+*¿Eso era lo que necesitabas o era para otra función?** 🤔
 
 
+
+**¿Lo usaste tal cual o lo modificaste?**
+No, solamente lo utilize para aprender la sintaxis, es algoritmo empleado es el mio
 ---
 
 ### 3 - listas.py
 
-**Herramienta**: 
+**Herramienta**:
 
 **Prompt usado**:
+
+**¿Lo usaste tal cual o lo modificaste?**
+
 > 
 
 **Resultado obtenido**:
