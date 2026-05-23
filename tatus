@@ -1,0 +1,12 @@
+[33mf1b37d8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m TP2 completado - todos los tests pasan
+[33mb3d9aec[m Al hacer los test detecte errores en el modulo condicionales
+[33mf58ee38[m Mejora del algoritmo eliminar_duplicados, ahora no repite comparaciones sino que compara hacia adelante, filtrando busqueda y siendo muy eficiente en caso de ser una lista ordenada
+[33mb83784b[m mejore el metodo "invertir_lista" con el la linea reverseList=list(reversed) cambiando el algoritmo de for empleado para tenr un metodo mas limpio
+[33mdb556a7[m Consulte a la Ia para verificar si comprendi la logica del criterio de un año bisiesto, modifique ligeramente el algoritmo
+[33mda56045[m actualize el modulo de pronts en el apartado variable
+[33me4a2217[m Termine el modulo de variables y aprendi sintaxis basica de pyton con el uso de la Ia
+[33m57aaf0a[m[33m ([m[1;31mupstream/main[m[33m, [m[1;31mupstream/HEAD[m[33m)[m add online IDE url; add deadline
+[33m6b00530[m Setting up GitHub Classroom Feedback
+[33mb791ce1[m[33m ([m[1;31mupstream/feedback[m[33m)[m GitHub Classroom Feedback
+[33m67ae21d[m Update title and criteria in README.md
+[33m43ff4d2[m Initial commit

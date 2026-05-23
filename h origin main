@@ -1,0 +1,71 @@
+[33mcommit f1b37d8338675bac0842c9434d7b6fa6c36cd950[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: BigHouseBH <[TU-EMAIL@gmail.com]>
+Date:   Wed Apr 8 15:20:25 2026 -0300
+
+    TP2 completado - todos los tests pasan
+
+[33mcommit b3d9aec6102f5034a7aa41c96f3b34624a33d36f[m
+Author: BigHouseBH <[TU-EMAIL@gmail.com]>
+Date:   Wed Apr 8 15:04:54 2026 -0300
+
+    Al hacer los test detecte errores en el modulo condicionales
+
+[33mcommit f58ee3896b375445c4af5b50d9c56437483675c6[m
+Author: BigHouseBH <[TU-EMAIL@gmail.com]>
+Date:   Wed Apr 8 14:23:45 2026 -0300
+
+    Mejora del algoritmo eliminar_duplicados, ahora no repite comparaciones sino que compara hacia adelante, filtrando busqueda y siendo muy eficiente en caso de ser una lista ordenada
+
+[33mcommit b83784b25fc7b993c4b6fdfa06dfe17596f18e7a[m
+Author: BigHouseBH <[TU-EMAIL@gmail.com]>
+Date:   Wed Apr 8 13:25:14 2026 -0300
+
+    mejore el metodo "invertir_lista" con el la linea reverseList=list(reversed) cambiando el algoritmo de for empleado para tenr un metodo mas limpio
+
+[33mcommit db556a7ab386c239caaeb2187bc55520d7e07042[m
+Author: BigHouseBH <[TU-EMAIL@gmail.com]>
+Date:   Wed Apr 8 10:41:05 2026 -0300
+
+    Consulte a la Ia para verificar si comprendi la logica del criterio de un año bisiesto, modifique ligeramente el algoritmo
+
+[33mcommit da5604581ed6013b371081a135ce717a8d3656e2[m
+Author: BigHouseBH <[TU-EMAIL@gmail.com]>
+Date:   Wed Apr 8 10:39:45 2026 -0300
+
+    actualize el modulo de pronts en el apartado variable
+
+[33mcommit e4a2217cc4ad826f4cd1c3b31b9fed9927aa6eac[m
+Author: BigHouseBH <[TU-EMAIL@gmail.com]>
+Date:   Tue Apr 7 22:56:40 2026 -0300
+
+    Termine el modulo de variables y aprendi sintaxis basica de pyton con el uso de la Ia
+
+[33mcommit 57aaf0a35643234e50606f87310177c750d8f90b[m[33m ([m[1;31mupstream/main[m[33m, [m[1;31mupstream/HEAD[m[33m)[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Apr 7 22:03:10 2026 +0000
+
+    add online IDE url; add deadline
+
+[33mcommit 6b00530b1ac53d8b136813d6cdd41695019bd7e0[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Apr 7 22:03:07 2026 +0000
+
+    Setting up GitHub Classroom Feedback
+
+[33mcommit b791ce1b68a66774c703fc30e7a22299ac4dc1fc[m[33m ([m[1;31mupstream/feedback[m[33m)[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Apr 7 22:03:07 2026 +0000
+
+    GitHub Classroom Feedback
+
+[33mcommit 67ae21d30601c53ba861c20ae801f77e4759a4a2[m
+Author: Ivan D'Uva <duva.ivan@outlook.com>
+Date:   Sun Mar 22 12:30:13 2026 -0300
+
+    Update title and criteria in README.md
+
+[33mcommit 43ff4d2eca8102b3a9e48bf2d98209d5831d8938[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Sun Mar 22 14:22:11 2026 +0000
+
+    Initial commit
